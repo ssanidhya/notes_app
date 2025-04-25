@@ -23,9 +23,9 @@ export const Sidebar = () => {
                 <span className="material-symbols-outlined">label_important</span>
                 <span>Important</span>
             </NavLink>
-            <NavLink className={getStyles} to="/bin">
+            <NavLink className={getStyles} to="/trash">
                 <span className="material-symbols-outlined">delete</span>
-                <span>Bin</span></NavLink>
+                <span>Trash</span></NavLink>
         </aside>
     );
 };
