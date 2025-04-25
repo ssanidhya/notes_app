@@ -37,6 +37,18 @@ export const notesReducer = (state, { type, payload }) => {
                 ...state,
                 notes: [...updatedNotes2, {...unpinnedNote, isPinned: false}]
             };
+        case 'ADD_TO_ARCHIVE':
+            return{
+                ...state,
+                archive: [...state.archive, state.notes.find(note => note.id === payload.id)],
+                notes: state.notes.filter(note => note.id !== payload.id)
+            }
+        case 'REMOVE_FROM_ARCHIVE':
+            return{
+                ...state,
+                notes: [...state.notes, state.archive.find(note => note.id === payload.id)],
+                archive: state.archive.filter(note => note.id !== payload.id)
+            }
         default:
             return state;
     }

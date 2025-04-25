@@ -10,7 +10,7 @@ export const Sidebar = () => {
     }
 
     return (
-        <aside className="flex flex-col px-1 py-4  gap-3 border-r-2 border-gray-200 w-40 h-screen">
+        <aside className="flex flex-col px-1 py-4  gap-3 border-r-2 border-gray-200 w-48 h-screen">
             <NavLink className={getStyles} to="/">
                 <span className="material-symbols-outlined">home</span>
                 <span>Home</span>
