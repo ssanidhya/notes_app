@@ -24,8 +24,8 @@ export const notesReducer = (state, action) => {
                 text: ''
             };
         case 'PIN_NOTE':
-            const pinnedNote = state.notes.find(note => note.id === action.action.payload.id);
-            const updatedNotes = state.notes.filter(note => note.id !== action.action.payload.id);
+            const pinnedNote = state.notes.find(note => note.id === action.payload.id);
+            const updatedNotes = state.notes.filter(note => note.id !== action.payload.id);
             return {
                 ...state,
                 notes: [...updatedNotes, { ...pinnedNote, isPinned: true }]
@@ -61,7 +61,7 @@ export const notesReducer = (state, action) => {
             const restoredNote = state.trash.find(note => note.id === action.payload.id);
             return {
                 ...state,
-                [restoredNote.from]: [state[restoredNote.from], {...restoredNote}],
+                [restoredNote.from]: [...state[restoredNote.from], {...restoredNote}],
                 trash: state.trash.filter(note => note.id !== action.payload.id)
             
             }

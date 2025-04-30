@@ -47,7 +47,7 @@ export const NotesCard = ({ id, title, text, isPinned, fromTrash }) => {
             <div className="flex justify-between items-center gap-2 border-b-2 border-gray-200">
                 <div className="break-words whitespace-normal font-semibold px-1 m-1">{title}</div>
                 {
-                    !isArchived ? <button onClick={() => onPinClick(id)} className="w-6 h-6 items-center justify-center relative overflow-hidden">
+                    !isArchived && !isTrashed ? <button onClick={() => onPinClick(id)} className="w-6 h-6 items-center justify-center relative overflow-hidden">
                         <span className={`material-symbols-outlined absolute inset-0 transition-all duration-100 ${isPinned ? 'opacity-0' : 'opacity-100'}`}>
                             keep
                         </span>
